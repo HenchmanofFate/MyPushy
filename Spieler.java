@@ -18,25 +18,14 @@ public class Spieler extends Actor
     public void act() 
     {
         int xt=0, yt=0;
-        if (getOneObjectAtOffset(0,0,Telepotta.class)!=null)
         
-        xt=getX();
-        yt=getY();
-        xt=xt+Greenfoot.getRandomNumber(8);
-        yt=yt+Greenfoot.getRandomNumber(8);
-       
-        //if(getOneObjectAtOffset(xt, yt, Spieler.class)=null)
-        setLocation(xt,yt);
-        
-       
-    
         if(Greenfoot.isKeyDown("up"))
         {
             int x=0;
             int y=-1;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(0);
-            //teleport(x,y);
+            Telepotta.teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);
