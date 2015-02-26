@@ -10,20 +10,33 @@ public class Spieler extends Actor
 {
     Mauer mauer;
     Kiste kiste;
+    Telepotta telepotta;
     /**
      * Act - do whatever the Spieler wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-
+        int xt=0, yt=0;
+        if (getOneObjectAtOffset(0,0,Telepotta.class)!=null)
+        
+        xt=getX();
+        yt=getY();
+        xt=xt+Greenfoot.getRandomNumber(8);
+        yt=yt+Greenfoot.getRandomNumber(8);
+       
+        //if(getOneObjectAtOffset(xt, yt, Spieler.class)=null)
+        setLocation(xt,yt);
+        
+       
+    
         if(Greenfoot.isKeyDown("up"))
         {
             int x=0;
             int y=-1;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(0);
+            //teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);

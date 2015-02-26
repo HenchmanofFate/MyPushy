@@ -11,7 +11,7 @@ public class PushyWelt extends World
     public PushyWelt()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(10, 11,36);
+        super(120, 24,36);
         //super(8,8,36);
         setPaintOrder(Spieler.class, Kiste.class, Mauer.class, KistenZielfeld.class);
 
