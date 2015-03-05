@@ -25,7 +25,7 @@ public class Spieler extends Actor
             int y=-1;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(0);
-            Telepotta.teleport(x,y);
+            teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);
@@ -49,6 +49,7 @@ public class Spieler extends Actor
             int y=0;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(270);
+             teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);
@@ -71,6 +72,7 @@ public class Spieler extends Actor
             int y=0;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(90);
+             teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);
@@ -93,6 +95,7 @@ public class Spieler extends Actor
             int y=+1;
             mauer = (Mauer) getOneObjectAtOffset (x,y, Mauer.class);
             setRotation(180);
+             teleport(x,y);
             if(mauer==null)
             {
                 kiste = (Kiste) getOneObjectAtOffset (x,y, Kiste.class);
@@ -110,4 +113,33 @@ public class Spieler extends Actor
             }
         }    
     }
+    public void teleport(int xt, int yt)
+    {
+        boolean ported = false;
+        Object obj;
+        int x = xt;
+        int y = yt;
+        
+        Telepotta telepottta;
+        telepotta = (Telepotta) getOneObjectAtOffset (x,y,Telepotta.class);
+        if (telepotta ! =null)
+        {
+            while   (!=ported)
+            
+            {
+                if (Greenfoot.getRandomnumber(2)==1)
+                {
+                    x=getX()+Greenfoot.getRandomNumber(6);
+                }
+                if (Greenfoot.getRandomNumber(2)==1)
+                {y=getY()+Greenfoot.getRandomNumber;
+                }
+                else 
+                {
+                    y=getY()-Greenfoot.getRandomNumber(6);
+                }
+                if(!(x
+        
+    
+    
 }
