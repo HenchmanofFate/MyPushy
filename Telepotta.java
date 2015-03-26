@@ -28,8 +28,8 @@ public class Telepotta extends Actor
    {
    while (!ported)
    {
-  x=getX()+Greenfoot.getRandomNumber(6);
-  y=getY()+Greenfoot.getRandomNumber(6);
+  x=getX()+Greenfoot.getRandomNumber(20);
+  y=getY()+Greenfoot.getRandomNumber(20);
   World tolleWelt = getWorld();
   if(!(x>=tolleWelt.getWidth()||y>=tolleWelt.getHeight()))
   {

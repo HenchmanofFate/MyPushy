@@ -122,24 +122,38 @@ public class Spieler extends Actor
         
         Telepotta telepottta;
         telepotta = (Telepotta) getOneObjectAtOffset (x,y,Telepotta.class);
-        if (telepotta ! =null)
+        if (telepotta !=null)
         {
-            while   (!=ported)
+            while   (! ported)
             
             {
-                if (Greenfoot.getRandomnumber(2)==1)
+                if (Greenfoot.getRandomNumber(2)==1)
                 {
                     x=getX()+Greenfoot.getRandomNumber(6);
                 }
                 if (Greenfoot.getRandomNumber(2)==1)
-                {y=getY()+Greenfoot.getRandomNumber;
+                {y=getY()+Greenfoot.getRandomNumber(6);
                 }
                 else 
                 {
                     y=getY()-Greenfoot.getRandomNumber(6);
                 }
-                if(!(x
+                if(!(x<0||y<0))
+                { 
+                    World tolleWelt = getWorld();
+                    if(!(x>=tolleWelt.getWidth()||y>=tolleWelt.getHeight()))
+                    { 
+                        obj=(Object) getOneObjectAtOffset(x,y,null);
+                        if ( obj == null)
+                        {
+                            setLocation(x,y);
+                            ported=true;
+                        }
+                    }
         
-    
+                }
+            }
+            }
+        }
     
 }
